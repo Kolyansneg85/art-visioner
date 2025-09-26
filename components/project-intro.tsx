@@ -58,7 +58,7 @@ export default function ProjectIntro() {
             {/* Left Column - Text Content */}
             <div className="space-y-8">
               <h2 className="text-xl md:text-2xl lg:text-2xl font-light text-[#a8996e] leading-tight font-history-pro">
-                Клубный дом Коллекционер в Петроградском районе
+                Клубный дом Визионер в Петроградском районе
               </h2>
 
               <div className="space-y-6 text-gray-700 text-lg leading-relaxed">

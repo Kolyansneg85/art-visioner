@@ -10,16 +10,16 @@ export default function Hero() {
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: "ЖК Коллекционер",
-    description: "Клубный дом «Коллекционер» в Петроградском районе Санкт-Петербурга",
+    name: "ЖК Визионер",
+    description: "Клубный дом «Визионер» в Петроградском районе Санкт-Петербурга",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "улица Чапыгина 4",
+      streetAddress: "улица Средняя Колтовская 9-11",
       addressLocality: "Санкт-Петербург",
       addressRegion: "Санкт-Петербург",
       addressCountry: "RU",
     },
-    url: "https://kollektsioner-dom.ru",
+    url: "https://art-visioner.ru",
     telephone: "+7 (812) 123-45-67",
     priceRange: "Цена по запросу",
     areaServed: "Петроградский район",
@@ -29,20 +29,20 @@ export default function Hero() {
   const realEstateJsonLd = {
     "@context": "https://schema.org",
     "@type": "ApartmentComplex",
-    name: "Клубный дом «Коллекционер»",
+    name: "Клубный дом «Визионер»",
     description: "Премиальный жилой комплекс в историческом центре Санкт-Петербурга",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "улица Чапыгина 4",
+      streetAddress: "улица Средняя Колтовская 9-11",
       addressLocality: "Санкт-Петербург",
       addressRegion: "Санкт-Петербург",
-      postalCode: "197046",
+      postalCode: "197110",
       addressCountry: "RU",
     },
-    numberOfAccommodationUnits: 69,
+    numberOfAccommodationUnits: 225,
     floorSize: {
       "@type": "QuantitativeValue",
-      minValue: 42.8,
+      minValue: 41.2,
       unitCode: "MTK",
     },
     amenityFeature: [
@@ -62,8 +62,8 @@ export default function Hero() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-building-light.webp"
-            alt="ЖК Коллекционер"
+            src="/images/hero-building-new.webp"
+            alt="ЖК Визионер - современный жилой комплекс"
             fill
             className="object-cover brightness-95"
             priority
@@ -74,26 +74,26 @@ export default function Hero() {
         {/* Main Content */}
         <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-history-pro font-medium mb-8 leading-tight tracking-wide">
-            Клубный дом «Коллекционер»
+            Клубный дом «Визионер»
           </h1>
 
           <div className="space-y-4 mb-8 md:mb-12 text-lg md:text-xl font-light">
             <p className="opacity-90">В Петроградском районе Санкт-Петербурга</p>
-            <p className="opacity-90">На улице Чапыгина 4</p>
+            <p className="opacity-90">На улице Средняя Колтовская 9-11</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12 text-center max-w-4xl mx-auto">
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Срок сдачи</p>
-              <p className="text-xl font-medium">Скоро в продаже</p>
+              <p className="text-xl font-medium">III кв. 2028 г.</p>
             </div>
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Стоимость</p>
-              <p className="text-xl font-medium">Цена по запросу</p>
+              <p className="text-xl font-medium">От 32.1 млн руб.</p>
             </div>
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Площадь</p>
-              <p className="text-xl font-medium">от 42.8 м²</p>
+              <p className="text-xl font-medium">от 41.2 м²</p>
             </div>
           </div>
 
