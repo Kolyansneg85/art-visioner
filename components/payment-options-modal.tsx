@@ -91,11 +91,38 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
         </DialogHeader>
 
         <div className="space-y-6 text-gray-700">
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <p className="leading-relaxed text-base">
-              Информация о способах оплаты, появится в скором времени, сразу после старта продаж. А пока, вы можете
-              проконсультироваться с нашим специалистом или записаться в лист ожидания, заполнив форму ниже.
-            </p>
+          <div className="space-y-6">
+            <div className="border-l-4 border-[#a8996e] pl-4">
+              <h4 className="font-medium text-[#a8996e] mb-2">Ипотека</h4>
+              <p className="leading-relaxed text-base">
+                Можно оформить с ведущими банками Санкт-Петербурга по стандартным и льготным программам.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[#a8996e] pl-4">
+              <h4 className="font-medium text-[#a8996e] mb-2">Беспроцентная рассрочка от застройщика</h4>
+              <p className="leading-relaxed text-base">
+                Первоначальный взнос от 15%, остаток выплачивается равными платежами до окончания строительства (срок —
+                до 2–3 лет), переплат нет.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[#a8996e] pl-4">
+              <h4 className="font-medium text-[#a8996e] mb-2">100% оплата</h4>
+              <p className="leading-relaxed text-base">Единоразовый платеж и максимальная выгода по цене.</p>
+            </div>
+
+            <div className="border-l-4 border-[#a8996e] pl-4">
+              <h4 className="font-medium text-[#a8996e] mb-2">Использование материнского капитала</h4>
+              <p className="leading-relaxed text-base">
+                Разрешено к оплате части стоимости квартиры и оформлению сделки.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[#a8996e] pl-4">
+              <h4 className="font-medium text-[#a8996e] mb-2">Trade-In</h4>
+              <p className="leading-relaxed text-base">Возможна обмен недвижимости с доплатой.</p>
+            </div>
           </div>
         </div>
 
