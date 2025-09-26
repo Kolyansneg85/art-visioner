@@ -2,8 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
- заменил старый домен jk-geniy.ru на основной домен kollektsioner-dom.ru 
-Sitemap: https://kollektsioner-dom.ru/sitemap.xml
+Sitemap: https://art-visioner.ru/sitemap.xml
 
 # Disallow crawling of admin or private areas (if any)
 Disallow: /api/

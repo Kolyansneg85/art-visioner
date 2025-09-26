@@ -35,7 +35,7 @@ export const metadata = {
   keywords:
     "новости клубном доме Коллекционер, ход строительства клубнго дома Коллекционер, акции в клубном доме Коллекционер, недвижимость в петроградском районе СПб",
   alternates: {
-    canonical: "https://kollektsioner-dom.ru/news",
+    canonical: "https://art-visioner.ru/news",
   },
 }
 

@@ -46,7 +46,7 @@ export default function Gallery() {
     },
     image: images.map((img, index) => ({
       "@type": "ImageObject",
-      url: `https://kollektsioner-dom.ru${img.src}`,
+      url: `https://art-visioner.ru${img.src}`,
       description: img.alt,
       position: index + 1,
     })),
