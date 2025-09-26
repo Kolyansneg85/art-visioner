@@ -42,7 +42,7 @@ export default function Hero() {
     numberOfAccommodationUnits: 225,
     floorSize: {
       "@type": "QuantitativeValue",
-      minValue: 41.2,
+      minValue: 32,
       unitCode: "MTK",
     },
     amenityFeature: [
@@ -93,7 +93,7 @@ export default function Hero() {
             </div>
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Площадь</p>
-              <p className="text-xl font-medium">от 41.2 м²</p>
+              <p className="text-xl font-medium">от 32 м²</p>
             </div>
           </div>
 
