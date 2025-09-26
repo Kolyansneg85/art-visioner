@@ -43,13 +43,13 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+  title: 'Клубный дом "Визионер" - Элитное жилье в Петроградском районе',
   description:
-    "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
-  keywords: "клубный дом, коллекционер, петроградский район, элитное жилье, санкт-петербург, чапыгина 4",
-  authors: [{ name: "Клубный дом Коллекционер" }],
-  creator: "Клубный дом Коллекционер",
-  publisher: "Клубный дом Коллекционер",
+    "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на Средней Колтовской улице. Квартиры от 41.2 м². Срок сдачи: III квартал 2028.",
+  keywords: "клубный дом, визионер, петроградский район, элитное жилье, санкт-петербург, средняя колтовская",
+  authors: [{ name: "Клубный дом Визионер" }],
+  creator: "Клубный дом Визионер",
+  publisher: "Клубный дом Визионер",
   other: {
     "content-language": "ru",
     language: "Russian",
@@ -76,17 +76,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+    title: 'Клубный дом "Визионер" - Элитное жилье в Петроградском районе',
     description:
-      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
-    url: "https://kollektsioner-dom.ru",
-    siteName: "Клубный дом Коллекционер",
+      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на Средней Колтовской улице. Квартиры от 41.2 м². Срок сдачи: III квартал 2028.",
+    url: "https://art-visioner.ru",
+    siteName: "Клубный дом Визионер",
     images: [
       {
-        url: "https://kollektsioner-dom.ru/images/hero-building-light.webp",
+        url: "https://art-visioner.ru/images/hero-building-light.webp",
         width: 1200,
         height: 630,
-        alt: "Клубный дом Коллекционер на Петроградской стороне",
+        alt: "Клубный дом Визионер на Петроградской стороне",
       },
     ],
     locale: "ru_RU",
@@ -94,18 +94,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+    title: 'Клубный дом "Визионер" - Элитное жилье в Петроградском районе',
     description:
-      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
-    images: ["https://kollektsioner-dom.ru/images/hero-building-light.webp"],
+      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на Средней Колтовской улице. Квартиры от 41.2 м². Срок сдачи: III квартал 2028.",
+    images: ["https://art-visioner.ru/images/hero-building-light.webp"],
   },
   alternates: {
-    canonical: "https://kollektsioner-dom.ru",
+    canonical: "https://art-visioner.ru",
   },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
     shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
   },
 }
 
@@ -125,12 +128,12 @@ export default function RootLayout({
               for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
               k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
             })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
-            ym(56852935, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+            ym(62434543, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
           `}
         </Script>
         <noscript>
           <div>
-            <img src="https://mc.yandex.ru/watch/56852935" style={{ position: "absolute", left: "-9999px" }} alt="" />
+            <img src="https://mc.yandex.ru/watch/62434543" style={{ position: "absolute", left: "-9999px" }} alt="" />
           </div>
         </noscript>
         {children}
