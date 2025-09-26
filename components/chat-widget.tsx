@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 const ChatWidgetConfig = {
   webhook: {
-    url: "https://n8n.getsync.ru/webhook/645aa356-14ed-4aaa-81fd-16f54829573a/chat",
+    url: "https://n8n.getsync.ru/webhook/6164586f-d161-4e09-a7a9-523754879d38/chat",
     route: "general",
   },
   style: {
@@ -171,10 +171,12 @@ export default function ChatWidget() {
             id="chat-widget-container"
           >
             {/* Заголовок */}
-            <div className="p-5 font-medium flex justify-between items-center text-lg" id="chat-widget-header">
+            <div className="p-5 font-medium flex justify-between items-center text-base" id="chat-widget-header">
               <span className="text-white flex items-center gap-2">
-                <i className="bx bx-message-dots text-xl"></i>
-                ИИ помощник ЖК Гений
+                <div className="siri-icon-mini">
+                  <div className="siri-sphere"></div>
+                </div>
+                ИИ помощник Коллекционер
               </span>
               <button onClick={() => setIsOpen(false)} className="close-button">
                 <i className="bx bx-x text-xl"></i>
@@ -366,26 +368,50 @@ export default function ChatWidget() {
           box-shadow: 0 10px 25px -5px rgba(220, 195, 151, 0.5), 0 8px 10px -6px rgba(220, 195, 151, 0.3);
         }
 
-        .chat-widget-wrapper .siri-wave-container {
-          height: 100%;
-          width: 100%;
+        .chat-widget-wrapper #chat-widget-button:hover {
+          background: linear-gradient(135deg, rgba(220, 195, 151, 1) 0%, rgba(192, 172, 133, 1) 100%);
+          box-shadow: 0 12px 35px rgba(220, 195, 151, 0.6), 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .chat-widget-wrapper .chat-icon-container {
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 3px;
         }
 
-        .chat-widget-wrapper .siri-wave {
-          width: 3px;
-          height: 15px;
-          background-color: white;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-          box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        .chat-widget-wrapper .chat-message-icon {
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          transition: transform 0.3s ease;
         }
 
-        .chat-widget-wrapper #chat-widget-button:hover .siri-wave {
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        .chat-widget-wrapper #chat-widget-button:hover .chat-message-icon {
+          transform: scale(1.1);
+        }
+
+        .chat-widget-wrapper .chat-pulse-ring {
+          position: absolute;
+          width: 70px;
+          height: 70px;
+          border: 2px solid rgba(220, 195, 151, 0.3);
+          border-radius: 50%;
+          animation: chatPulse 2s infinite;
+          opacity: 0;
+        }
+
+        @keyframes chatPulse {
+          0% {
+            transform: scale(0.8);
+            opacity: 0.8;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 0.3;
+          }
+          100% {
+            transform: scale(1.3);
+            opacity: 0;
+          }
         }
 
         .chat-widget-wrapper .close-button {
@@ -469,7 +495,30 @@ export default function ChatWidget() {
           font-size: 20px;
         }
 
-        /* Анимации */
+        /* Добавил стили для Siri-волн */
+        .chat-widget-wrapper .siri-wave-container {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 3px;
+        }
+
+        .chat-widget-wrapper .siri-wave {
+          width: 3px;
+          height: 15px;
+          background-color: white;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .chat-widget-wrapper #chat-widget-button:hover .siri-wave {
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Добавил анимации для Siri-волн */
         @keyframes slowPulse {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.7; }

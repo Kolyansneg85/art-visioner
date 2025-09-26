@@ -1,13 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useRef } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 
 interface PaymentOptionsModalProps {
   isOpen: boolean
@@ -22,10 +22,18 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
   })
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [phoneError, setPhoneError] = useState("")
   const dialogRef = useRef<HTMLDivElement>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsLoading(true)
 
     try {
@@ -60,6 +68,10 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (e.target.name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -79,36 +91,10 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
         </DialogHeader>
 
         <div className="space-y-6 text-gray-700">
-          {/* 100% Payment */}
           <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">100% оплата</h3>
-            <p className="leading-relaxed">Полная оплата стоимости квартиры единовременно с максимальной выгодой.</p>
-          </div>
-
-          {/* Interest-free installment */}
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">Беспроцентная рассрочка от застройщика</h3>
-            <p className="leading-relaxed">
-              Разбитая на удобные суммы выплата стоимости квартиры без переплат на срок до 2,5 лет. Обычно первый взнос
-              составляет 20-30%, остальная сумма оплачивается равными ежемесячными или ежеквартальными платежами до
-              марта 2028 года.
-            </p>
-          </div>
-
-          {/* Mortgage and government programs */}
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">Ипотечное кредитование</h3>
-            <p className="leading-relaxed">
-              Работаем с ведущими банками. Доступны программы с использованием материнского капитала и военной ипотеки.
-            </p>
-          </div>
-
-          {/* Trade-in program */}
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">Программа Trade-in</h3>
-            <p className="leading-relaxed">
-              Обмен имеющейся недвижимости с первым взносом от 10% и остатком оплаты позже, по цене 100%-й оплаты без
-              скидок.
+            <p className="leading-relaxed text-base">
+              Информация о способах оплаты, появится в скором времени, сразу после старта продаж. А пока, вы можете
+              проконсультироваться с нашим специалистом или записаться в лист ожидания, заполнив форму ниже.
             </p>
           </div>
         </div>
@@ -136,19 +122,24 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
               onFocus={(e) => (e.target.tabIndex = 0)}
               className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
             />
-            <Input
-              name="phone"
-              type="tel"
-              placeholder="Телефон"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              disabled={isLoading}
-              autoComplete="off"
-              tabIndex={-1}
-              onFocus={(e) => (e.target.tabIndex = 0)}
-              className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
-            />
+            <div>
+              <Input
+                name="phone"
+                type="tel"
+                placeholder="Телефон"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                disabled={isLoading}
+                autoComplete="off"
+                tabIndex={-1}
+                onFocus={(e) => (e.target.tabIndex = 0)}
+                className={`bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px] ${
+                  phoneError ? "border-red-500" : ""
+                }`}
+              />
+              {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
+            </div>
             <Textarea
               name="wishes"
               placeholder="Ваши пожелания"

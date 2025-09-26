@@ -1,8 +1,42 @@
 import { Building, Users, Car, TreePine } from "lucide-react"
 
 export default function About() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    name: "Клубный дом «Коллекционер»",
+    description:
+      "Воплощение изысканной архитектуры, приватности и арт-атмосферы для ценителей культурной жизни в центре Петроградского района. Каждый элемент дома отражает эстетику коллекционного произведения искусства: воздушные фасады из натурального камня, итальянская площадь у входа, приватный зеленый двор-патио, авторское лобби с пинакотекой и современными технологиями комфорта.",
+    numberOfBuildings: 2,
+    numberOfRooms: 69,
+    amenityFeature: [
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Современная архитектура",
+        description: "Панорамные окна",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Эксклюзивные квартиры",
+        description: "Мансардные, двухуровневые и с террасами",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Подземный паркинг",
+        description: "57 машино-мест, лифт, кладовые",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Зелёная зона",
+        description: "Закрытый двор-патио с ландшафтным садом, зоной отдыха, детской и work-территорией с Wi-Fi",
+      },
+    ],
+  }
+
   return (
     <section id="about" className="pt-32 pb-16 bg-white scroll-mt-32">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide text-gray-900 font-history-pro">
@@ -10,8 +44,10 @@ export default function About() {
           </h2>
           <div className="w-24 h-px bg-[#a8996e] mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
-            Жилой комплекс «Гений» — это воплощение современной архитектуры и комфортной городской среды. Каждая деталь
-            продумана для создания идеального пространства для жизни.
+            Клубный дом «Коллекционер» — воплощение изысканной архитектуры, приватности и арт-атмосферы для ценителей
+            культурной жизни в центре Петроградского района. Каждый элемент дома отражает эстетику коллекционного
+            произведения искусства: воздушные фасады из натурального камня, итальянская площадь у входа, приватный
+            зеленый двор-патио, авторское лобби с пинакотекой и современными технологиями комфорта.
           </p>
         </div>
 
@@ -22,7 +58,7 @@ export default function About() {
                 <Building className="h-10 w-10 text-[#a8996e]" strokeWidth={1.2} />
               </div>
             </div>
-            <h3 className="text-2xl font-light mb-3 text-gray-900">6 КОРПУСОВ</h3>
+            <h3 className="text-2xl font-light mb-3 text-gray-900">2 СЕКЦИИ</h3>
             <p className="text-gray-600 font-light">Современная архитектура с панорамными окнами</p>
           </div>
 
@@ -32,8 +68,10 @@ export default function About() {
                 <Users className="h-10 w-10 text-[#a8996e]" strokeWidth={1.2} />
               </div>
             </div>
-            <h3 className="text-2xl font-light mb-3 text-gray-900">1211 КВАРТИР</h3>
-            <p className="text-gray-600 font-light">От студий до 3-комнатных квартир</p>
+            <h3 className="text-2xl font-light mb-3 text-gray-900">69 КВАРТИР</h3>
+            <p className="text-gray-600 font-light">
+              Эксклюзивные форматы: мансардные, двухуровневые и квартиры с террасами
+            </p>
           </div>
 
           <div className="text-center group">
@@ -43,7 +81,7 @@ export default function About() {
               </div>
             </div>
             <h3 className="text-2xl font-light mb-3 text-gray-900">ПАРКИНГ</h3>
-            <p className="text-gray-600 font-light">Подземная парковка на 601 место</p>
+            <p className="text-gray-600 font-light">Подземный паркинг на 57 машино-мест с лифтом и кладовыми</p>
           </div>
 
           <div className="text-center group">
@@ -53,7 +91,9 @@ export default function About() {
               </div>
             </div>
             <h3 className="text-2xl font-light mb-3 text-gray-900">ЗЕЛЕНАЯ ЗОНА</h3>
-            <p className="text-gray-600 font-light">Благоустроенная территория с парком</p>
+            <p className="text-gray-600 font-light">
+              Закрытый двор-патио с ландшафтным садом, зоной отдыха, детской и work-территорией Wi-Fi
+            </p>
           </div>
         </div>
       </div>

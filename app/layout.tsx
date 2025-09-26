@@ -1,9 +1,10 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Roboto } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 import ChatWidget from "../components/chat-widget"
+import Script from "next/script"
 
 // Подключение Google Fonts
 const inter = Inter({
@@ -33,12 +34,79 @@ const ceraPro = localFont({
   display: "swap",
 })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#1a1a1a",
+}
+
 export const metadata: Metadata = {
-  title: 'ЖК "Гений" - Элитное жилье в центре города | FAQ',
+  title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
   description:
-    "Современный жилой комплекс с квартирами от 1 до 4 комнат. Ответы на частые вопросы о покупке, ипотеке, инфраструктуре. Звоните!",
-  keywords: "жилой комплекс, квартиры, недвижимость, новостройка, ипотека, FAQ, вопросы ответы",
-    generator: 'v0.app'
+    "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
+  keywords: "клубный дом, коллекционер, петроградский район, элитное жилье, санкт-петербург, чапыгина 4",
+  authors: [{ name: "Клубный дом Коллекционер" }],
+  creator: "Клубный дом Коллекционер",
+  publisher: "Клубный дом Коллекционер",
+  other: {
+    "content-language": "ru",
+    language: "Russian",
+    "geo.region": "RU-SPE",
+    "geo.placename": "Saint Petersburg",
+    "geo.position": "59.9311;30.3609",
+    ICBM: "59.9311, 30.3609",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  generator: "v0.app",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+    description:
+      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
+    url: "https://kollektsioner-dom.ru",
+    siteName: "Клубный дом Коллекционер",
+    images: [
+      {
+        url: "https://kollektsioner-dom.ru/images/hero-building-light.webp",
+        width: 1200,
+        height: 630,
+        alt: "Клубный дом Коллекционер на Петроградской стороне",
+      },
+    ],
+    locale: "ru_RU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+    description:
+      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
+    images: ["https://kollektsioner-dom.ru/images/hero-building-light.webp"],
+  },
+  alternates: {
+    canonical: "https://kollektsioner-dom.ru",
+  },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 }
 
 export default function RootLayout({
@@ -48,7 +116,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.variable} ${historyPro.variable} ${ceraPro.variable} ${roboto.variable}`}>
-      <body>
+      <body className="overflow-x-hidden">
+        <Script id="yandex-metrika" strategy="afterInteractive">
+          {`
+            (function(m,e,t,r,i,k,a){
+              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+              m[i].l=1*new Date();
+              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+            ym(56852935, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+          `}
+        </Script>
+        <noscript>
+          <div>
+            <img src="https://mc.yandex.ru/watch/56852935" style={{ position: "absolute", left: "-9999px" }} alt="" />
+          </div>
+        </noscript>
         {children}
         <ChatWidget />
       </body>

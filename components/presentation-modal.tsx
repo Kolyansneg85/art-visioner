@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -19,9 +19,15 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
     phone: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [phoneError, setPhoneError] = useState("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
+
+    if (name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -35,6 +41,12 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
       return
     }
 
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsSubmitting(true)
 
     try {
@@ -73,8 +85,9 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
 
       // Start PDF download after successful webhook submission
       const link = document.createElement("a")
-      link.href = "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%91%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
-      link.download = "ЖК-Гений-Презентация.pdf"
+      link.href =
+        "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80_%D0%B1%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
+      link.download = "Коллекционер-Презентация.pdf"
       link.target = "_blank" // Open in new tab as fallback
       document.body.appendChild(link)
       link.click()
@@ -91,8 +104,9 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
       console.error("[v0] Error submitting presentation form:", error)
       // Still allow download even if webhook fails
       const link = document.createElement("a")
-      link.href = "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%91%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
-      link.download = "ЖК-Гений-Презентация.pdf"
+      link.href =
+        "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80_%D0%B1%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
+      link.download = "Коллекционер-Презентация.pdf"
       link.target = "_blank"
       document.body.appendChild(link)
       link.click()
@@ -151,8 +165,11 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a8996e] focus:border-transparent"
+              className={`w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a8996e] focus:border-transparent ${
+                phoneError ? "border-red-500" : ""
+              }`}
             />
+            {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
           </div>
 
           <Button
