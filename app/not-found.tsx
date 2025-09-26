@@ -5,8 +5,8 @@ import Footer from "@/components/footer"
 import { Home, ArrowLeft } from "lucide-react"
 
 export const metadata = {
-  title: "Страница не найдена — ЖК «Коллекционер»",
-  description: "Запрашиваемая страница не найдена. Вернитесь на главную страницу ЖК «Коллекционер».",
+  title: "Страница не найдена — Клубный дом «Визионер»",
+  description: "Запрашиваемая страница не найдена. Вернитесь на главную страницу клубного дома «Визионер».",
   robots: "noindex, nofollow",
 }
 
@@ -57,10 +57,10 @@ export default function NotFound() {
 
             {/* Additional Info */}
             <div className="mt-16 p-8 bg-white rounded-2xl shadow-sm border border-slate-200">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4 font-cera-pro">Дом «Коллекционер»</h3>
+              <h3 className="text-xl font-semibold text-slate-800 mb-4 font-cera-pro">Клубный дом «Визионер»</h3>
               <p className="text-slate-600 mb-6">
-                Премиальный жилой комплекс в центре Санкт-Петербурга — элитные квартиры с уникальной архитектурой и
-                высоким уровнем комфорта для истинных ценителей качества.
+                Премиальный жилой комплекс в Петроградском районе Санкт-Петербурга — 225 элитных квартир от 32 до 147 м²
+                с террасами и эркерами, приватным двором и современной инфраструктурой.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/#apartments" className="text-[#a8996e] hover:text-[#9d8f5f] transition-colors font-medium">
