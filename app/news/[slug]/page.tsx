@@ -119,8 +119,7 @@ const articles: Article[] = [
             "height": 60
           }
         },
-        "description": "Обзор инвестиционной привлекательности Петроградского района Санкт-Петербурга: рост цен на элитную недвижимость, развитая инфраструктура, уникальное расположение и клубный дом Визионер.",
-        "articleBody": "Петроградский район Санкт-Петербурга сегодня признан одним из самых престижных и динамично развивающихся районов города, который всё активнее привлекает внимание покупателей элитной недвижимости и инвесторов. Расположенный на историческом острове между Невой и Финским заливом, район совмещает близость к центру с уникальной природной средой. Благодаря этому, а также высокому уровню городской инфраструктуры, Петроградка становится излюбленным местом жизни обеспеченных горожан. Рынок элитной недвижимости района демонстрирует устойчивый рост: по итогам 2024 года цены здесь поднялись более чем на 31%. Это обусловлено не только ограниченным предложением высококлассных проектов, но и ростом спроса на жильё премиального уровня, которое сочетает качество, комфорт и престиж. Сейчас в районе реализуются масштабные проекты, одним из которых является клубный дом «Визионер» — проект, задающий высокий архитектурный стандарт и реализующий передовые инженерные решения. Инвестиции в недвижимость района считаются менее рискованными благодаря устойчивому спросу и ограниченности площадок для новой застройки."
+        "description": "Обзор инвестиционной привлекательности Петроградского района Санкт-Петербурга: рост цен на элитную недвижимость, развитая инфраструктура, уникальное расположение и клубный дом Визионер."
       }
       </script>
 
@@ -213,8 +212,11 @@ const articles: Article[] = [
       <h3>Заключение</h3>
       <p>Инженерные инновации и цифровые технологии в сочетании с архитектурной продуманностью делают клубный дом «Визионер» уникальным объектом в Санкт-Петербурге. Высокий уровень комфорта, безопасность и экологичность становятся основой современного элитного жилья, предлагая резидентам действительно качественную жизнь.</p>
 
-      <p>Для полного погружения в атмосферу комплекса рекомендуем ознакомиться с другими статьями из нашего блога: <a href="/news/architecture-future-vizioner" class="text-[#a8996e] hover:text-[#c4b896] font-medium">«Архитектура будущего»</a>, <a href="/news/petrogradsky-district-elite-real-estate" class="text-[#a8996e] hover:text-[#c4b896] font-medium">«Петер
-      </p>
+      <p>Для полного погружения в атмосферу комплекса рекомендуем ознакомиться с другими статьями из нашего блога: <a href="/news/architecture-future-vizioner" class="text-[#a8996e] hover:text-[#c4b896] font-medium">«Архитектура будущего»</a> и <a href="/news/petrogradsky-district-elite-real-estate" class="text-[#a8996e] hover:text-[#c4b896] font-medium">«Петроградский район — новый центр притяжения элитной недвижимости»</a>.</p>
+
+      <hr class="my-8 border-gray-200">
+
+      <p class="mt-6"><a href="tel:+78126605650" class="text-[#a8996e] hover:text-[#c4b896] font-medium">Узнать больше о проекте</a> и записаться на презентацию можно по телефону или через форму обратной связи на сайте.</p>
     `,
     date: "2025-09-27",
     readTime: "10 мин",
@@ -230,15 +232,45 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div>
-      <h1>{article.title}</h1>
-      <p>{article.excerpt}</p>
-      <div dangerouslySetInnerHTML={{ __html: article.content }} />
-      <p>Дата публикации: {article.date}</p>
-      <p>Время чтения: {article.readTime}</p>
-      {article.image && <img src={article.image || "/placeholder.svg"} alt={article.title} />}
-      <SocialShareButtons />
-      <RelatedNewsCarousel />
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <article className="prose prose-lg max-w-none">
+          <header className="mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">{article.title}</h1>
+            <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
+              <time dateTime={article.date}>
+                {new Date(article.date).toLocaleDateString("ru-RU", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+              <span>•</span>
+              <span>{article.readTime}</span>
+            </div>
+            {article.image && (
+              <img
+                src={article.image || "/placeholder.svg"}
+                alt={article.title}
+                className="w-full h-64 md:h-96 object-cover rounded-lg mb-8"
+              />
+            )}
+          </header>
+
+          <div
+            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-[#a8996e] hover:prose-a:text-[#c4b896]"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
+        </article>
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <SocialShareButtons />
+        </div>
+
+        <div className="mt-12">
+          <RelatedNewsCarousel currentArticleId={article.id} articles={articles} />
+        </div>
+      </div>
     </div>
   )
 }
