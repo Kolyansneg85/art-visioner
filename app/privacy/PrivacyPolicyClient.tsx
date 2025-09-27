@@ -78,7 +78,7 @@ export default function PrivacyPolicyClient() {
               </p>
               <p>
                 1.4. Настоящая Политика применяется ко всей информации, которую Оператор может получить о посетителях
-                веб-сайта kollektsioner-dom.ru.
+                веб-сайта art-visioner.ru.
               </p>
             </section>
 
@@ -137,7 +137,7 @@ export default function PrivacyPolicyClient() {
                   <strong>3.8. Электронная почта:</strong> info@domfy.ru
                 </p>
                 <p>
-                  <strong>3.9. Адрес сайта:</strong> kollektsioner-dom.ru
+                  <strong>3.9. Адрес сайта:</strong> art-visioner.ru
                 </p>
                 <p>
                   <strong>3.10. Налоговый орган:</strong> Межрайонная инспекция Федеральной налоговой службы №15 по
@@ -182,7 +182,7 @@ export default function PrivacyPolicyClient() {
               <h2 className="text-2xl font-medium mb-4 text-gray-900">6. Категории субъектов персональных данных</h2>
               <p className="mb-4">6.1. Субъектами персональных данных являются:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Посетители сайта kollektsioner-dom.ru</li>
+                <li>Посетители сайта art-visioner.ru</li>
                 <li>Потенциальные и действующие клиенты агентства недвижимости</li>
                 <li>Лица, обратившиеся за консультацией по недвижимости</li>
                 <li>Подписчики на информационную рассылку</li>
@@ -295,7 +295,7 @@ export default function PrivacyPolicyClient() {
               <p className="mb-4">10.2. Применяемые меры безопасности включают:</p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Назначение ответственного за организацию обработки персональных данных</li>
-                <li>Ограничение состава лиц, имеющих доступ к персо��альным данным</li>
+                <li>Ограничение состава лиц, имеющих доступ к персональным данным</li>
                 <li>Применение программно-технических средств защиты информации</li>
                 <li>Ведение журналов учета носителей персональных данных</li>
                 <li>Проведение внутреннего контроля соответствия обработки персональных данных 152-ФЗ</li>
@@ -336,7 +336,7 @@ export default function PrivacyPolicyClient() {
                 12. Использование файлов cookies и систем аналитики
               </h2>
               <p className="mb-4">
-                12.1. На сайте kollektsioner-dom.ru используются файлы cookies и системы веб-аналитики для:
+                12.1. На сайте art-visioner.ru используются файлы cookies и системы веб-аналитики для:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Улучшения функционирования сайта</li>
@@ -402,7 +402,7 @@ export default function PrivacyPolicyClient() {
                   <strong>Email:</strong> info@domfy.ru
                 </p>
                 <p>
-                  <strong>Сайт:</strong> kollektsioner-dom.ru
+                  <strong>Сайт:</strong> art-visioner.ru
                 </p>
                 <p>
                   <strong>Ответственный за обработку персональных данных:</strong> Козлов Николай Викторович
@@ -421,9 +421,9 @@ export default function PrivacyPolicyClient() {
                 об изменениях, вносимых в настоящую Политику.
               </p>
               <p className="mb-4">
-                15.2. Актуальная версия Политики размещается на сайте kollektsioner-dom.ru по адресу:
-                kollektsioner-dom.ru/privacy/ и вступает в силу с момента ее размещения, если иной порядок вступления в
-                силу не предусмотрен новой редакцией Политики.
+                15.2. Актуальная версия Политики размещается на сайте art-visioner.ru по адресу:
+                art-visioner.ru/privacy/ и вступает в силу с момента ее размещения, если иной порядок вступления в силу
+                не предусмотрен новой редакцией Политики.
               </p>
               <p className="mb-4">
                 15.3. В случае несогласия субъекта персональных данных с условиями настоящей Политики обработка его

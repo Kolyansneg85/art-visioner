@@ -176,7 +176,7 @@ export default function ChatWidget() {
                 <div className="siri-icon-mini">
                   <div className="siri-sphere"></div>
                 </div>
-                ИИ помощник Коллекционер
+                ИИ помощник Визионер
               </span>
               <button onClick={() => setIsOpen(false)} className="close-button">
                 <i className="bx bx-x text-xl"></i>

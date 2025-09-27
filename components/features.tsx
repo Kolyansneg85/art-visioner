@@ -38,11 +38,11 @@ export default function Features() {
   const servicesJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Инфраструктура ЖК Коллекционер",
+    name: "Инфраструктура ЖК Визионер",
     description: "Комплекс услуг и удобств для жителей жилого комплекса",
     provider: {
       "@type": "RealEstateAgent",
-      name: "ЖК Коллекционер",
+      name: "ЖК Визионер",
     },
     serviceType: "Жилищные услуги",
     areaServed: "Петроградский район, Санкт-Петербург",
