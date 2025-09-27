@@ -234,9 +234,11 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <article className="prose prose-lg max-w-none">
+        <article>
           <header className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">{article.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight font-history-pro">
+              {article.title}
+            </h1>
             <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
               <time dateTime={article.date}>
                 {new Date(article.date).toLocaleDateString("ru-RU", {
@@ -257,10 +259,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             )}
           </header>
 
-          <div
-            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-[#a8996e] hover:prose-a:text-[#c4b896]"
-            dangerouslySetInnerHTML={{ __html: article.content }}
-          />
+          <div className="article-content text-gray-700" dangerouslySetInnerHTML={{ __html: article.content }} />
         </article>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
