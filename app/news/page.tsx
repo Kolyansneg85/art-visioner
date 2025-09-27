@@ -70,6 +70,16 @@ const articles: Article[] = [
     readTime: "8 мин",
     image: "/images/blog/petrogradsky-district-aerial.webp",
   },
+  {
+    id: "3",
+    slug: "comfort-technologies-vizioner",
+    title: "Технологии комфорта: инновационные решения в современном жилье на примере ЖК «Визионер»",
+    excerpt:
+      "В современном элитном жилье комфорт и технологии уже давно стали неотъемлемой частью высокого качества жизни. Клубный дом «Визионер» в Петроградском районе Санкт-Петербурга — яркий пример такого союза инноваций и продуманного дизайна.",
+    date: "2025-09-27",
+    readTime: "10 мин",
+    image: "/images/blog/comfort-technologies-interior.webp",
+  },
 ]
 
 export default function NewsPage() {

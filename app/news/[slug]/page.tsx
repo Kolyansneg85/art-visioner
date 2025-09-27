@@ -1,6 +1,4 @@
 import { notFound } from "next/navigation"
-import Link from "next/link"
-import type { Metadata } from "next"
 import SocialShareButtons from "@/components/social-share-buttons"
 import RelatedNewsCarousel from "@/components/related-news-carousel"
 
@@ -153,143 +151,94 @@ const articles: Article[] = [
     readTime: "8 мин",
     image: "/images/blog/petrogradsky-district-aerial.webp",
   },
+  {
+    id: "3",
+    slug: "comfort-technologies-vizioner",
+    title: "Технологии комфорта: инновационные решения в современном жилье на примере ЖК «Визионер»",
+    excerpt:
+      "В современном элитном жилье комфорт и технологии уже давно стали неотъемлемой частью высокого качества жизни. Клубный дом «Визионер» в Петроградском районе Санкт-Петербурга — яркий пример такого союза инноваций и продуманного дизайна.",
+    content: `
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://art-visioner.ru/news/comfort-technologies-vizioner"
+        },
+        "headline": "Технологии комфорта: инновационные решения в современном жилье на примере ЖК «Визионер»",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://art-visioner.ru/images/blog/comfort-technologies-interior.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "datePublished": "2025-09-27T21:40:00+03:00",
+        "dateModified": "2025-09-27T21:40:00+03:00",
+        "author": {
+          "@type": "Person",
+          "name": "Art Visioner Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Art Visioner",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://art-visioner.ru/logo.svg",
+            "width": 250,
+            "height": 60
+          }
+        },
+        "description": "Подробный обзор инновационных инженерных решений клуба «Визионер» — технологии шумоизоляции, вентиляции, цифрового дома и систем безопасности, обеспечивающих максимальный комфорт жителей."
+      }
+      </script>
+
+      <p><strong>В современном элитном жилье комфорт и технологии уже давно стали неотъемлемой частью высокого качества жизни. Клубный дом «Визионер» в Петроградском районе Санкт-Петербурга — яркий пример такого союза инноваций и продуманного дизайна.</strong> Этот жилой комплекс премиум-класса сочетает в себе первоклассные инженерные решения, системы автоматизации и экологически ориентированные технологии, создавая обстановку, где каждый житель чувствует себя в безопасности и уюте. Подробнее о концепции проекта можно узнать на <a href="/" class="text-[#a8996e] hover:text-[#c4b896] font-medium">главной странице</a> и в разделе <a href="/#apartments" class="text-[#a8996e] hover:text-[#c4b896] font-medium">планировок квартир</a>.</p>
+
+      <h3>Инновации в инженерных системах «Визионера»</h3>
+      <p>Одной из ключевых особенностей «Визионера» является использование технологии «плавающий пол» — уникального звукоизоляционного решения, которое значительно снижает передачу шума между квартирами. Вместе с высокоэффективными многослойными фасадами, это обеспечивает комфортную жизнь даже в условиях городской суеты. <a href="/news/architecture-future-vizioner" class="text-[#a8996e] hover:text-[#c4b896] font-medium">Архитектурные решения «Визионера»</a> продуманы до мелочей для максимального комфорта жителей.</p>
+
+      <p>Каждая квартира оснащена системой индивидуальной приточно-вытяжной вентиляции с фильтрацией воздуха, что гарантирует свежесть и здоровье в доме без необходимости постоянного проветривания. Собственная крышная котельная обеспечивает жильцам бесперебойное теплоснабжение и горячую воду, повышая энергоэффективность комплекса и снижая эксплуатационные расходы.</p>
+
+      <h3>Цифровые технологии и безопасность</h3>
+      <p>«Визионер» оснащён современными цифровыми системами управления квартирой — системой «Цифровой дом», которая позволяет дистанционно контролировать инженерные коммуникации, освещение, отопление и безопасность. Все входы в дом и на территорию организованы через электронные ключи с индивидуальной идентификацией, обеспечивая максимальную безопасность и приватность жильцов.</p>
+
+      <p>Круглосуточная охрана, многокамерное видеонаблюдение на всей территории, а также система быстрых оповещений о любых инцидентах — дополнительные гарантии спокойствия для всей семьи. Помимо этого, предусмотрены помещения для хранения велосипедов и детских колясок, что упрощает повседневную жизнь в комфортной и аккуратной среде. Подробнее о системах безопасности можно узнать в разделе <a href="/#infrastructure" class="text-[#a8996e] hover:text-[#c4b896] font-medium">инфраструктуры</a>.</p>
+
+      <h3>Экологические и ресурсосберегающие решения</h3>
+      <p>Современные тенденции активно отражены в проектах «Визионера»: энергосберегающие фасады с применением натуральных и экологичных материалов, раздельный сбор мусора на всей территории комплекса, а также максимальная ориентация на минимизацию энергозатрат. Эти решения делают проживание не только комфортным, но и ответственным по отношению к окружающей среде.</p>
+
+      <p>Особое внимание уделено созданию комфортной среды во внутреннем дворе — <a href="/#intelligent-courtyard" class="text-[#a8996e] hover:text-[#c4b896] font-medium">умный двор</a> без машин с ландшафтным дизайном, игровыми зонами и местами для отдыха создает идеальную атмосферу для семейной жизни.</p>
+
+      <h3>Заключение</h3>
+      <p>Инженерные инновации и цифровые технологии в сочетании с архитектурной продуманностью делают клубный дом «Визионер» уникальным объектом в Санкт-Петербурге. Высокий уровень комфорта, безопасность и экологичность становятся основой современного элитного жилья, предлагая резидентам действительно качественную жизнь.</p>
+
+      <p>Для полного погружения в атмосферу комплекса рекомендуем ознакомиться с другими статьями из нашего блога: <a href="/news/architecture-future-vizioner" class="text-[#a8996e] hover:text-[#c4b896] font-medium">«Архитектура будущего»</a>, <a href="/news/petrogradsky-district-elite-real-estate" class="text-[#a8996e] hover:text-[#c4b896] font-medium">«Петер
+      </p>
+    `,
+    date: "2025-09-27",
+    readTime: "10 мин",
+    image: "/images/blog/comfort-technologies-interior.webp",
+  },
 ]
 
-export async function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }))
-}
-
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = articles.find((a) => a.slug === params.slug)
-
-  if (!article) {
-    return {
-      title: "Новость не найдена | Клубный дом «Визионер»",
-    }
-  }
-
-  return {
-    title: `${article.title} | Клубный дом «Визионер»`,
-    description: article.excerpt,
-    keywords: `Клубный дом Визионер, ${article.title}, новости недвижимости, Петроградская сторона, Санкт-Петербург`,
-    alternates: {
-      canonical: `https://art-visioner.ru/news/${params.slug}`,
-    },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      images: article.image ? [article.image] : [],
-      type: "article",
-      publishedTime: article.date,
-    },
-  }
-}
-
-const ArrowLeft = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-  </svg>
-)
-
-const Calendar = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2z"
-    />
-  </svg>
-)
-
-const Clock = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-    />
-  </svg>
-)
-
-export default function NewsArticlePage({ params }: { params: { slug: string } }) {
+export default function Page({ params }: { params: { slug: string } }) {
   const article = articles.find((a) => a.slug === params.slug)
 
   if (!article) {
     notFound()
   }
 
-  const fullUrl = `https://art-visioner.ru/news/${article.slug}`
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Навигация */}
-      <div className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <Link
-            href="/news"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft />
-            Назад к новостям
-          </Link>
-        </div>
-      </div>
-
-      {/* Контент статьи */}
-      <article className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-          {article.image && (
-            <img
-              src={article.image || "/placeholder.svg"}
-              alt={article.title}
-              className="w-full h-64 md:h-96 object-cover"
-              loading="lazy" // added lazy loading for performance
-            />
-          )}
-
-          <div className="p-6 md:p-8">
-            <div className="flex items-center gap-4 text-gray-500 text-sm mb-6">
-              <div className="flex items-center gap-1">
-                <Calendar />
-                {new Date(article.date).toLocaleDateString("ru-RU")}
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock />
-                {article.readTime}
-              </div>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-balance">{article.title}</h1>
-
-            <div
-              className="article-content prose prose-lg max-w-none 
-                prose-headings:text-gray-900 prose-headings:font-bold prose-headings:mt-8 prose-headings:mb-4
-                prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-                prose-p:text-gray-700 prose-p:mb-4 prose-p:leading-relaxed
-                prose-li:text-gray-700 prose-li:mb-2
-                prose-ul:mb-6 prose-ul:space-y-2
-                prose-strong:text-gray-900 prose-strong:font-semibold
-                prose-a:text-[#a8996e] prose-a:no-underline hover:prose-a:text-[#c4b896]
-                [&>script]:hidden"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
-
-            {/* Кнопки социальных сетей */}
-            <div className="border-t border-gray-200 pt-8">
-              <SocialShareButtons url={fullUrl} title={article.title} description={article.excerpt} />
-            </div>
-          </div>
-        </div>
-
-        {/* Карусель похожих новостей */}
-        <div className="mt-12">
-          <RelatedNewsCarousel currentArticleId={article.id} articles={articles} />
-        </div>
-      </article>
+    <div>
+      <h1>{article.title}</h1>
+      <p>{article.excerpt}</p>
+      <div dangerouslySetInnerHTML={{ __html: article.content }} />
+      <p>Дата публикации: {article.date}</p>
+      <p>Время чтения: {article.readTime}</p>
+      {article.image && <img src={article.image || "/placeholder.svg"} alt={article.title} />}
+      <SocialShareButtons />
+      <RelatedNewsCarousel />
     </div>
   )
 }
