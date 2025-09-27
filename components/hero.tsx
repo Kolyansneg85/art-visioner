@@ -20,8 +20,8 @@ export default function Hero() {
       addressCountry: "RU",
     },
     url: "https://art-visioner.ru",
-    telephone: "+7 (812) 123-45-67",
-    priceRange: "Цена по запросу",
+    telephone: "+7 (812) 660-56-50",
+    priceRange: "От 32 млн рублей",
     areaServed: "Петроградский район",
     serviceType: "Продажа недвижимости",
   }
