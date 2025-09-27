@@ -296,16 +296,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!article) {
     return {
-      title: "Новость не найдена | Клубный дом Коллекционер - Domfy",
+      title: "Новость не найдена | Клубный дом «Визионер»",
     }
   }
 
   return {
-    title: `${article.title} | Клубный дом Коллекционер - Domfy`,
+    title: `${article.title} | Клубный дом «Визионер»`,
     description: article.excerpt,
-    keywords: `Клубный дом Коллекционер, ${article.title}, новости недвижимости, Петроградская сторона, Санкт-Петербург`,
+    keywords: `Клубный дом Визионер, ${article.title}, новости недвижимости, Петроградская сторона, Санкт-Петербург`,
     alternates: {
-      canonical: `https://kollektsioner-dom.ru/news/${params.slug}`,
+      canonical: `https://art-visioner.ru/news/${params.slug}`,
     },
     openGraph: {
       title: article.title,
@@ -352,7 +352,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
     notFound()
   }
 
-  const fullUrl = `https://kollektsioner-dom.ru/news/${article.slug}`
+  const fullUrl = `https://art-visioner.ru/news/${article.slug}`
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -377,6 +377,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
               src={article.image || "/placeholder.svg"}
               alt={article.title}
               className="w-full h-64 md:h-96 object-cover"
+              loading="lazy" // added lazy loading for performance
             />
           )}
 

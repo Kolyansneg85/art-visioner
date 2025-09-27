@@ -105,6 +105,7 @@ export default function NewsPage() {
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
                     className="w-full h-48 object-cover rounded-t-lg"
+                    loading="lazy" // added lazy loading for performance
                   />
                 )}
 

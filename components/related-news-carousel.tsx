@@ -112,6 +112,7 @@ export default function RelatedNewsCarousel({ currentArticleId, articles }: Rela
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy" // added lazy loading for performance
                   />
                 </div>
               )}
