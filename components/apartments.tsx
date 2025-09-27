@@ -478,6 +478,30 @@ const apartmentAltTexts = {
   3: ["4-комнатная квартира 110,1 м² в клубном доме Визионер"],
 }
 
+const getConsolidatedJsonLd = (activeType: number) => {
+  const apartments = apartmentJsonLd[activeType as keyof typeof apartmentJsonLd]
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${activeType === 0 ? "1" : activeType === 1 ? "2" : activeType === 2 ? "3" : "4"}-комнатные квартиры в ЖК Визионер`,
+    description: `Планировки ${activeType === 0 ? "1" : activeType === 1 ? "2" : activeType === 2 ? "3" : "4"}-комнатных квартир в клубном доме Визионер`,
+    itemListElement: apartments.map((apartment, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Residence",
+        name: apartment.name,
+        description: apartment.description,
+        floorSize: apartment.floorSize,
+        availability: apartment.availability,
+        offers: apartment.expectedProposition,
+        image: apartment.image,
+      },
+    })),
+  }
+}
+
 export default function Apartments() {
   const [activeType, setActiveType] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -490,61 +514,12 @@ export default function Apartments() {
 
   return (
     <>
-      {activeType === 0 && (
-        <>
-          {apartmentJsonLd[0].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 1 && (
-        <>
-          {apartmentJsonLd[1].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 2 && (
-        <>
-          {apartmentJsonLd[2].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 3 && (
-        <>
-          {apartmentJsonLd[3].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getConsolidatedJsonLd(activeType)),
+        }}
+      />
 
       <section id="apartments" className="pt-32 pb-16 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">
@@ -616,18 +591,8 @@ export default function Apartments() {
                   <Image
                     src={apartment.floorPlan || "/placeholder.svg"}
                     alt={
-                      (activeType === 0 && apartmentAltTexts[0][index]) ||
-                      (activeType === 1 && apartmentAltTexts[1][index]) ||
-                      (activeType === 2 && apartmentAltTexts[2][index]) ||
-                      (activeType === 3 && apartmentAltTexts[3][index])
-                        ? activeType === 0
-                          ? apartmentAltTexts[0][index]
-                          : activeType === 1
-                            ? apartmentAltTexts[1][index]
-                            : activeType === 2
-                              ? apartmentAltTexts[2][index]
-                              : apartmentAltTexts[3][index]
-                        : `Планировка ${apartment.type} в ЖК Визионер - ${apartment.planType} с оптимальным зонированием пространства`
+                      apartmentAltTexts[activeType as keyof typeof apartmentAltTexts][index] ||
+                      `Планировка ${apartment.type} в ЖК Визионер - ${apartment.planType} с оптимальным зонированием пространства`
                     }
                     width={400}
                     height={300}

@@ -7,56 +7,60 @@ import PresentationModal from "./presentation-modal"
 export default function Hero() {
   const [isPresentationModalOpen, setIsPresentationModalOpen] = useState(false)
 
-  const organizationJsonLd = {
+  const consolidatedJsonLd = {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: "ЖК Визионер",
-    description: "Клубный дом «Визионер» в Петроградском районе Санкт-Петербурга",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "улица Средняя Колтовская 9-11",
-      addressLocality: "Санкт-Петербург",
-      addressRegion: "Санкт-Петербург",
-      addressCountry: "RU",
-    },
-    url: "https://art-visioner.ru",
-    telephone: "+7 (812) 660-56-50",
-    priceRange: "От 32 млн рублей",
-    areaServed: "Петроградский район",
-    serviceType: "Продажа недвижимости",
-  }
-
-  const realEstateJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ApartmentComplex",
-    name: "Клубный дом «Визионер»",
-    description: "Премиальный жилой комплекс в историческом центре Санкт-Петербурга",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "улица Средняя Колтовская 9-11",
-      addressLocality: "Санкт-Петербург",
-      addressRegion: "Санкт-Петербург",
-      postalCode: "197110",
-      addressCountry: "RU",
-    },
-    numberOfAccommodationUnits: 225,
-    floorSize: {
-      "@type": "QuantitativeValue",
-      minValue: 32,
-      unitCode: "MTK",
-    },
-    amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Подземный паркинг", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Консьерж-сервис", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Пинакотека", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Приватный двор", value: true },
+    "@graph": [
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://art-visioner.ru/#organization",
+        name: "ЖК Визионер",
+        description: "Клубный дом «Визионер» в Петроградском районе Санкт-Петербурга",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "улица Средняя Колтовская 9-11",
+          addressLocality: "Санкт-Петербург",
+          addressRegion: "Санкт-Петербург",
+          addressCountry: "RU",
+        },
+        url: "https://art-visioner.ru",
+        telephone: "+7 (812) 660-56-50",
+        priceRange: "От 32 млн рублей",
+        areaServed: "Петроградский район",
+        serviceType: "Продажа недвижимости",
+      },
+      {
+        "@type": "ApartmentComplex",
+        "@id": "https://art-visioner.ru/#building",
+        name: "Клубный дом «Визионер»",
+        description: "Премиальный жилой комплекс в историческом центре Санкт-Петербурга",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "улица Средняя Колтовская 9-11",
+          addressLocality: "Санкт-Петербург",
+          addressRegion: "Санкт-Петербург",
+          postalCode: "197110",
+          addressCountry: "RU",
+        },
+        numberOfAccommodationUnits: 225,
+        floorSize: {
+          "@type": "QuantitativeValue",
+          minValue: 32,
+          unitCode: "MTK",
+        },
+        amenityFeature: [
+          { "@type": "LocationFeatureSpecification", name: "Подземный паркинг", value: true },
+          { "@type": "LocationFeatureSpecification", name: "Консьерж-сервис", value: true },
+          { "@type": "LocationFeatureSpecification", name: "Пинакотека", value: true },
+          { "@type": "LocationFeatureSpecification", name: "Приватный двор", value: true },
+        ],
+        developer: { "@id": "https://art-visioner.ru/#organization" },
+      },
     ],
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(consolidatedJsonLd) }} />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
