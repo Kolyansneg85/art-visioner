@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation"
+import Link from "next/link"
+import { ChevronLeft } from "lucide-react"
 import SocialShareButtons from "@/components/social-share-buttons"
 import RelatedNewsCarousel from "@/components/related-news-carousel"
 
@@ -234,6 +236,16 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <div className="mb-8">
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Назад к новостям
+          </Link>
+        </div>
+
         <article>
           <header className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight font-history-pro">
