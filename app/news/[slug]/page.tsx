@@ -275,7 +275,11 @@ export default function Page({ params }: { params: { slug: string } }) {
         </article>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <SocialShareButtons />
+          <SocialShareButtons
+            url={`https://art-visioner.ru/news/${article.slug}`}
+            title={article.title}
+            description={article.excerpt}
+          />
         </div>
 
         <div className="mt-12">

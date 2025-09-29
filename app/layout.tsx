@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   publisher: "Клубный дом Визионер",
   other: {
     "content-language": "ru",
-    language: "Russian",
+    language: "ru",
     "geo.region": "RU-SPE",
     "geo.placename": "Saint Petersburg",
     "geo.position": "59.9311;30.3609",
